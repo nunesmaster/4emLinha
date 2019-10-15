@@ -1,0 +1,887 @@
+.box {
+    
+    width: 23%;
+    padding: 1%;
+    position: absolute;
+    top: 24%;
+    left: 81%;
+    border-radius: 24px;
+    transform: translate(-50%, -50%);
+    border: solid 2px black;
+    background: rgba(0 ,0 ,0, 0.5);
+    color: white;
+    text-align: center;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1;
+}
+
+#nick, #password {
+    
+    border: 0;
+    background: none;
+    display: block;
+    margin: 5% auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 1%;
+    width: 50%;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+#nick:focus, #password:focus {
+    
+    width: 80%;
+    border-color: #2ecc71;
+}
+
+#submit {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 5% auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 1%;
+    width: 20%;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+#submit:hover {
+    
+    background: #2ecc71;
+}
+
+
+
+
+#exp{
+    
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 50px;
+    background: #262626;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 50px;
+    color: #ff0;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: sans-serif;
+    letter-spacing: 4px;
+}
+
+#exp:before{
+    
+    top: -2px;
+    left: -2px;
+}
+#exp:after{
+    top: -2px;
+    right: -2px;
+}
+
+#exp2:before {
+    bottom: -2px;
+    left: -2px;
+}
+#exp2:after{
+    
+    bottom: -2px;
+    right: -2px;
+}
+
+#exp:before, #exp:after, #exp2:before, #exp2:after{
+    
+    
+    mix-blend-mode: hue;
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #ff0;
+    transition: 1s;
+}
+
+#exp:hover:before, 
+#exp:hover:after, 
+#exp:hover #exp2:before, 
+#exp:hover #exp2:after{
+    
+    width: calc(180px /2);
+    height: calc(50px /2);
+}
+
+
+body {
+
+    margin: 0;
+    padding: 1px;
+    background-image: url(fundo.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: round;
+    height: 100%;
+    width: 100%;
+    font-family: century gothic;
+    font-weight: bold;
+}
+
+#loaderFullPage {
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+#loader{
+    border:5px solid;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    border-color: orange transparent transparent;
+    animation: spin 2s linear 200;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+  }
+  
+  @keyframes spin{
+    100%{transform:rotate(360deg);filter:hue-rotate(360deg)}
+  }
+
+
+
+#jogo, #log {
+
+    position: relative;
+    border: solid black 2px;
+    display: inline-block;
+    width: 10%;
+    line-height: 50px;
+    text-align: center;
+    border-radius:20px;
+    margin-left: 75%;
+    margin-top: 1%;
+    color: white;
+    font-weight: bold;
+    transition: ease-in-out 200ms;
+    overflow: hidden;
+}
+
+#jogo:hover, #log:hover {
+
+    color: aquamarine;
+}
+
+
+#logo {
+
+    position: absolute;
+    background-color: aliceblue;
+    border: solid black 2px;
+    z-index: 5;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 1%;
+    width: 10%    ;
+    display: inline;
+}
+
+#form {
+
+    width: 75%;
+    margin: 0 auto;
+    display: none; 
+    position: absolute;
+    margin-top: 6%;
+    margin-left: 20%;
+}
+
+.login {
+    
+    width: 30%;
+    margin: 0 auto;    
+}
+
+
+input{
+    border-radius: 10px;
+    height: auto;
+        margin-top: 10px;
+    width: 100%;
+    display: inline-block;
+}
+
+.botao2{
+    display: block;
+    font-weight: bold;
+}
+
+#registar {
+    
+    width: 100px;
+    height: 50px;
+    background-color: blue;
+    margin-left: 40%;
+    cursor: pointer;
+}
+
+#mainMenu{
+
+/*dimensoes*/
+    width: 200px;
+    height: 580px;
+    /*modelo*/
+    margin-top: 50px;
+    margin-left: 10px;
+    padding-top: 1px;
+    border-radius: 20px;
+    /*cores*/
+    background-color: rgb(174, 227, 217);
+    /*posicionamento*/
+    display: none;
+    float: left;
+}
+
+#caixaBotoes {
+
+    padding-top: 1px;
+    height: 500px;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: block;
+
+}
+
+.caixaBotao {
+
+    display: block;
+    width: 160px;
+    height: 55px;
+    border-radius: 20px;
+    background-color: rgb(255, 228, 100);
+    margin: 0 auto; 
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+#botao, #botao2 {
+
+    display: block;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(255, 228, 100);
+    float: right;
+    margin-top: 10px;
+    margin-right: 32px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+#botao2 {
+    
+    margin-top: 100px;
+}
+
+#timerH2{
+    
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    display: block;
+    z-index: 101;
+    background-color: aquamarine;
+    width: 150px;
+    height: 50px;
+    margin-left: 770px;
+    margin-top: 120px;
+    border-radius: 24px;
+    text-align: center;
+    line-height: 50px;
+    display: none;
+}
+#abandonarBotao {
+    
+    
+    position: relative;
+    margin-top: 15%;
+    margin-right: 5%;
+    width: 50%;
+    height: 10%;
+    float: right;
+    background-color: red;
+    z-index: 101;
+    display: none;
+}
+
+#abandonarBotao:hover {
+    
+    background-color: rgb(54, 149, 205);
+}
+
+#abandonar{ font-size: 16px; text-align: center;}
+
+#box {
+
+    width: 100px;
+    height: 150px;
+    margin-top: -110px;
+    margin-left: 90px;
+    position: absolute; 
+}
+
+#box2 {
+
+    width: 100px;
+    height: 150px;
+    margin-top: -65px;
+    margin-left: 110px;
+    position: absolute; 
+    display: none;
+}
+
+
+
+#mini_ball1, #mini_ball2, #mini_ball3, #mini_ball4, #mini_ball5, #mini_ball6 {
+
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 0px;
+    display: block;
+
+}
+
+#mini_ball1{
+
+    transform: rotate(45deg);
+}
+
+#mini_ball2 {
+
+    margin-left: 25px;
+    border-radius: 50%;
+    background-color:  #ccffcc;
+}
+
+#mini_ball3 {
+
+    margin-left: 25px;
+    border-radius: 50%;
+}
+
+#mini_ball4 {
+
+    margin-left: 8px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+
+.icon {
+
+    width: 55px;
+    height: auto;
+    float: left;
+    margin-left: -10px;
+
+}
+
+.botao{
+
+    /*cores*/
+    color: white;
+    /*texto*/
+    font-size: 20px;
+    /*posicionamento*/
+    float: left;
+    margin: 17.5px 0 17.5px 5px;
+}
+
+.caixaBotao:hover{
+
+    /*cores*/
+    background-color: rgb(54, 149, 205);
+    color: white;
+    /*efeitos*/
+    transition: all ease-in-out  200ms;
+
+}
+
+#tabela {
+
+    background-color: rgb(54, 149, 205);
+    position: absolute;
+    width: 950px;
+    height: 580px;
+    display: inline-block;
+    float: right;
+    padding: 0;
+    padding: 1px;
+    display: none;
+    margin-left: 250px;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+#bola_container {
+
+    display: inline-block;
+    float: left;
+    height: auto;
+}
+
+#bola1, #bola2, #bola3, #bola4  {
+
+    width: 143px;
+    height: 143px;
+    border-radius: 50%;
+    background-color: rgb(174, 227, 217);
+    visibility: visible;
+    margin-left: 8px;
+    padding: 1px;
+
+}
+
+#bola5 {
+    
+    width: 95px;
+    z-index: 80;
+    height: 95px;
+    border-radius: 50%;
+    background-color: rgb(255, 228, 100);
+    visibility: visible;
+    margin-top: 50px;
+    margin-left: 400px;
+    padding: 1px;
+}
+
+.info {
+
+    margin-left: 20px;
+    margin-top: 40px;
+    background-color: white;
+    text-align: center;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.close {
+
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-left: 5px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+
+.close:hover {
+
+    width: 45px;
+    height: 45px;
+}
+
+.selections {
+
+    /*dimensoes*/
+    height: 40px;
+    width: 110px;
+    /*modelo*/
+    margin: 15px 20px 0 0;
+    border-radius: 20px;
+    /*cores*/
+    /*posicionamento*/
+    float: right;
+}
+
+.selections1 {
+
+    /*dimensoes*/
+    height: 40px;
+    width: 90px;
+    /*modelo*/
+    border-radius: 20px;
+    /*cores*/
+    /*posicionamento*/
+    float: right;
+}
+
+select {
+
+    /*dimensoes*/
+    width: 50px;
+    height: 40px;
+    /*modelo*/
+    margin-top: 10px;
+    margin-left: 10px;
+    /*cores*/
+    background-color: antiquewhite;
+    /*texto*/
+    font-size: 15px;
+
+}
+
+#sel1, #sel2 {
+
+    margin-top: -10px;
+    font-size: 20px;
+    width: 40px;
+    height: 60px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#sel3, #sel4 {
+
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 33px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#easy, #medium, #dificil {
+
+    width: 39px;
+    height: 39px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-top: 1px;
+    margin-left: 30px;
+}
+
+#easy { background-color: green;}
+#medium { background-color: yellow; margin-left: 0;}
+#dificil { background-color: red; margin-left: 50px;}
+
+
+#dificil:hover { background-color: rgb(250,100, 100);}
+#easy:hover { background-color: rgb(0,200,100);}
+#medium:hover { background-color: rgb(250,200,40);}
+
+
+
+#person, #computer {
+
+    width: 55px;
+    height: 55px;
+    margin-top: 5px;
+    display: inline-block;
+    border-radius: 40%;
+    margin-left: 14px;
+    background-color: white;
+}
+
+#person { float: left; margin-left: 10px;}
+
+#person:hover, #computer:hover {
+
+    background-color: #00BFFF;
+    transition: ease-in-out 300ms;
+}
+
+#teste {
+
+    width: 200px;
+    height: auto;
+}
+
+
+#playerBox {
+
+    margin-top: 200px;
+    margin-left: 100px;
+    z-index: 0;
+    position: absolute;
+    padding: 1px;
+}
+
+#player1, #player2 {
+
+    border-radius: 50%;
+    border: 4px solid white;
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    margin-bottom: 5px;
+    visibility: hidden;
+}
+
+#player1{
+
+    background-color: red;
+    margin-left: 60px;
+    line-height: 150px;
+    text-align: center;
+}
+
+#player2{
+
+background-color: yellow;
+margin-left: 530px;
+    line-height: 150px;
+    text-align: center;
+}
+
+#player1Span, #player2Span {
+
+    border-bottom: 3px solid white;
+    color: transparent;
+    display: inline-block;
+    margin-left: -65px;
+    visibility: hidden;
+}
+
+#caixa_win {
+
+    width: 15%;
+    height: 39%;
+    position: absolute;
+    margin: 33% 0 0 80%;
+    border-radius: 20px;
+    background-color: black;
+}
+
+#boxP1, #boxP2 {
+
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+}
+
+#boxP1 {
+
+    background-color: red;
+    float: left;
+}
+
+#boxP2 {
+
+    background-color: yellow;
+    float: right;
+}
+
+#teste1, #teste2 {
+
+    height: 100%;
+    width: 100%;
+    background-color: rgb(54, 149, 205);
+    transition: height 2s ease;
+}
+
+#winner1, #winner2 {
+
+    height: 50px;
+    width: 50px;
+    margin-top: 90%;
+    margin-left: 25%;
+    display: none;
+}
+
+#caixa_instrucoes{
+
+    text-align: center;
+    width: 60%;
+    height: 17%;
+    padding: 10px;
+    position: absolute;
+    margin: -45px 0 0 190px;
+    border-radius: 20px;
+    background-color: rgb(174, 227,217);
+    display: block;
+}
+
+#instrucoes {
+
+    text-align: center;
+    width: 100%;
+    height: 80%;
+    margin-top: 5px;
+    position: absolute;
+    border-radius: 20px;
+    background-color: white;
+}
+
+#fecha {
+
+    margin-top: -15px;
+    margin-left: -350px;
+}
+
+#desistir {
+
+    background-color: white;
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    margin-left: 835px;
+    margin-top: 50px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 50px;
+    transition: ease-in-out 500ms;
+    display: none;
+}
+
+#desistir:hover {
+
+    background-color: red;
+}
+
+#p1First, #p2First {
+
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    display: inline-block;
+    margin-left: 14px;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 50px;
+    transition: all ease-in-out 200ms;
+}
+
+#p1First { background-color: red;}
+#p2First { background-color: yellow;}
+
+#p1First:hover, #p2First:hover { background-color: rgb(100,200,200);}
+
+
+#scoreContainer, #scoreContainer2 {
+
+    padding: 1px;
+    width: 55%;
+    height: 55%;
+    background-color: rgb(174, 227,217);;
+    position: absolute;
+    margin-top: 24%;
+    margin-left: 33%;
+    z-index: 6;
+    border-radius: 20px;
+    display: none;
+}
+
+.headers{
+    font-size: 30px;  
+}
+
+.resul {
+    
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 25px;
+}
+
+#scoreSelection {
+    
+    font-size: 10px;
+    background-color: white;
+    width: 50px;
+    margin-top: 10px;
+    margin-left: 21px;
+    border-radius: 20px;
+}
+
+table {
+    
+    font-size: 14px;
+}
+
+
+#score, #score2 {
+
+    position: absolute;
+    width: 70%;
+    height: 10%;
+    text-align: center;
+    font-size: 20px;
+    height: 90%;
+    float: left;
+    margin-left: 10px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: scroll;
+}
+
+
+#user1{ 
+    float: left; margin-left: 50px;
+    padding: 0;
+    margin-bottom: 0;
+    margin-right: 120px;}
+
+#user2{ 
+    float: right; margin-right: 30px;
+    padding: 0;
+    margin-bottom: 0;}
+
+#pointsUser1{ 
+
+    font-size: 25px;
+    margin-left: 45px;
+    margin-top: 29px;
+    float: left;
+    color: rgb(54, 149, 205) ;
+}
+
+.botao2{
+    display: block;
+    font-weight: bold;
+}
+
+
+#pointsUser2{
+
+    font-size: 18px;
+    margin-right: 100px;
+    margin-top: 29px;
+}
+
+
+#pointsUser1{ 
+    
+    font-size: 40px;
+    margin-left: -30px;
+    margin-top: -100px;
+    float: left;
+}
+
+#pointsUser2{
+
+    font-size: 40px;
+    margin-right: -30px;
+    margin-top: 100px;
+    float: right;
+}
+
+#fecha2{ margin-top: -35%;}
+#fecha3{ margin-top: -8%;}

@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang = "pt">
+
+    <head>
+        
+        <title>4 em linha</title>
+        <link rel="stylesheet" href="app.css">
+        <script src="app.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    
+
+    <body>
+        
+        <div id = "loaderFullPage">
+            <div id = "loader"></div>
+        </div>
+        <div id = "mainPage">
+            <img alt = "imagem" id = "logo" src="logo.png">
+          
+            <!--<a href="#" id="exp"><span id = "exp2"></span>Botao</a>-->
+            <div id = "log" onclick = "show(form)">Registar/Login</div>
+            <div id="form">
+                <form class="box">
+                    <input id = "nick" type="text" placeholder = "Insira o seu user">
+
+                    <input id = "password" type="password" placeholder = "Insira a sua pass">
+                    
+                    <input id = "submit" onclick = "registo()" type="text" value = "Entrar">
+                    
+                </form>
+                
+            </div>
+            
+
+        </div>    
+
+        <!-- menu de jogo -->
+        <div id ="mainMenu">
+
+          <div id = "caixaBotoes">
+
+            <!--Botao de jogar -->  
+            <div class = "caixaBotao" id = 'jogar1' onclick="createTable()">
+                <img alt = "imagem"  class = "icon" src = "https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/gamecontroller-512.png">
+                <div class = "botao" id = "jogar" >Jogar</div>
+            </div>
+
+            <!--Botao de Definições -->
+            <div class = "caixaBotao" onmouseover = "show(box)" onmouseout = "hide(box)">
+                <img alt = "imagem"  class = "icon" src = "https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/gear-512.png">
+                <div class = "botao" >Definições
+
+                    <!-- icons de seleção -->
+                    <div id = "box">
+                        <img alt = "imagem"  id = "mini_ball1" onclick = "view(bola1)" src = "https://png.icons8.com/flat_round/1600/resize-four-directions.png">
+                        <img alt = "imagem"  id = "mini_ball2" onclick = "view(bola2)" src = "https://png.icons8.com/color/1600/audio-wave2.png">
+                        <img alt = "imagem"  id = "mini_ball3" onclick = "view(bola3)" src = "https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/user-512.png">
+                        <img  alt = "imagem" id = "mini_ball4" onclick = "view(bola4)" src = "https://png.icons8.com/ios/1600/head-to-head.png">
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Botao das instruçoes -->
+            <div class = "caixaBotao" onclick = "view(caixa_instrucoes)">
+                    <img alt = "imagem"  class = "icon" src = "https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/booklet-512.png">
+                    <div class = "botao">Instruções</div>
+            </div>
+
+            <!--Botao dos Resultados -->
+            <div class = "caixaBotao" onmouseover = "show(box2)" onmouseout = "hide(box2)" >
+                <img alt = "imagem"  class = "icon" src = "https://cdn1.iconfinder.com/data/icons/business-487/48/1-512.png">
+                <div class = "botao">Score
+                    <div id = "box2">
+                        <img alt = "imagem"  id = "mini_ball5" onclick = "show(scoreContainer)" src = "https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-512.png">
+                        <img alt = "imagem"  id = "mini_ball6" onclick = "show(scoreContainer2)" src = "https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/computer-512.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class = "caixaBotao" id = "abandonarBotao" onclick ="sair()">
+                <div class ="botao" id = "abandonar">Abandonar</div>
+            </div>
+          </div>
+
+        </div>
+        
+        
+        <div id = "tabela">
+                <div id = "bola_container">
+                    <div id = "bola1">
+                        
+                        <img alt = "imagem"  class = "close" src = "https://image.flaticon.com/icons/svg/291/291202.svg" onclick = "unview(bola1)">
+                        <div class = "info">Tamanho</div>
+                        <div class = "selections">
+                            <select size=1 id = "sel1">
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option selected="selected">7</option>
+                                <option>8</option>
+                            </select>
+                            <select size=1 id = "sel2">
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option selected="selected">6</option>
+                                <option>7</option>
+                                <option>8</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id = "bola2">
+                        <img alt = "imagem"  class = "close" src = "https://image.flaticon.com/icons/svg/291/291202.svg" onclick = "unview(bola2)">
+                        <div class = "info">Dificuldade</div>
+                        <div id = 'opponent'>
+                            <div id = "easy" onclick = "dificuldade(0)"></div>
+                            <div id = "medium" onclick = "dificuldade(1)"></div>
+                            <div id = "dificil" onclick = "dificuldade(2)"></div>
+                        </div>
+                    </div>
+                    <div id= "bola3">
+                        <img alt = "imagem"  class = "close" src = "https://image.flaticon.com/icons/svg/291/291202.svg" onclick = "unview(bola3)"><div class = "info">1º Jogar</div>
+                        <div id = "1stContainer">
+                            <div id = "p1First" onclick="firstToplay(1, 0)">P1</div>
+                            <div id = "p2First" onclick="firstToplay(2, 1)">PC</div>
+                        </div>
+                    </div>
+                    <div id= "bola4">
+                        <img alt = "imagem"  class = "close" src = "https://image.flaticon.com/icons/svg/291/291202.svg" onclick = "unview(bola4)"><div class = "info">Oponente</div>
+                        <div id = "teste">
+                            <img alt = "imagem"  id = "person" src = "https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-512.png" onclick = "lightUp(person, computer)">
+                            <img alt = "imagem"  id = "computer" src = "https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/computer-512.png" onclick = "lightUp(computer, person)">
+                        </div>
+                    </div>
+                </div>
+                <div id = "playerBox">
+                    <div id = "player1"></div>
+                    <span id = "player1Span">player1</span>
+                    <div id = "player2"></div>    
+                    <span id = "player2Span">player2</span>    
+                </div>
+            
+                <div id = "caixa_instrucoes">INSTRUÇÕES
+                    <img alt = "imagem"  class = "close" id = "fecha" src = "https://image.flaticon.com/icons/svg/291/291202.svg" onclick = "unview(caixa_instrucoes)">
+                    <div id = "instrucoes">Cada jogador joga com peças de cor diferente e alternadamente coloca uma peça numa das calhas ainda não completamente preenchidas. Ganha o primeiro jogador que conseguir colocar 4 peças da sua cor alinhadas, na vertical, horizontal ou diagonal.
+                    </div>
+                </div>
+                <div id = "timerH2"></div>
+            
+                <div id = "caixa_win">
+
+                    <div id = "boxP1">
+                        <div id = 'teste1'><img alt  = "imagem"  id = "winner1" src = "https://image.flaticon.com/icons/svg/321/321773.svg"></div>
+                    </div>
+                    <div id = "boxP2">
+                        <div id = 'teste2'><img alt  = "imagem"  id = "winner2" src = "https://image.flaticon.com/icons/svg/321/321773.svg"></div>
+                    </div>
+                </div>
+                <div id = "desistir" onclick="createOptions(10)">Desistir
+                </div>
+                <div id = 'scoreContainer'><h4 class = 'resul'>Resultados</h4>
+                    <div id = "score"></div>
+                    <div id = "bola5">
+                        <div id = 'scoreSelection'>Tamanho</div>
+                        <div class = "selections1">
+                            <select size=1 id = "sel3">
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option selected="selected">7</option>
+                                <option>8</option>
+                            </select>
+                            <select size=1 id = "sel4">
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option selected="selected">6</option>
+                                <option>7</option>
+                                <option>8</option>
+                            </select>
+                        </div>
+                        </div>
+                    <div class = "show" onclick = "ranks()">
+                        <div id = "botao">Show</div>
+                    </div>
+                    <img alt = "imagem"  class = "close" id = "fecha2" src = "https://image.flaticon.com/icons/svg/291/291202.svg" onclick = "hide(scoreContainer)">
+                </div>
+                <div id='scoreContainer2'><h4 class= 'resul'>Resultados</h4>
+                    <div id="score2"></div>
+                    <div class = "show" onclick = "resultadospc()">
+                        <div id = "botao2">Show</div>
+                    </div>                         
+                    <img alt = "imagem"  class = "close" id = "fecha3" src = "https://image.flaticon.com/icons/svg/291/291202.svg" onclick = "hide(scoreContainer2)">
+                </div>
+            </div>
+    </body>
+</html>
+
